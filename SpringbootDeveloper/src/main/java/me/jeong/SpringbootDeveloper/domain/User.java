@@ -33,7 +33,7 @@ public class User implements UserDetails {
     private String password;
 
     @Builder
-    public User(String email, String Password, String auth) {
+    public User(String email, String password, String auth) {
         this.email = email;
         this.password = password;
     }
