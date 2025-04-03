@@ -13,11 +13,13 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+    implementation 'org.springframework.boot:spring-boot-starter-security' //1
+    // 1. 스프링 시큐리티를 사용하기 위한 스타터 추가
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6' //2
+    // 2. 타임리프에서 스프링 시큐리티를 사용하기 위한 의존성 추가
     implementation 'io.jsonwebtoken:jjwt:0.9.1' //자바 JWT 라이브러리
     implementation 'javax.xml.bind:jaxb-api:2.3.1' // XML 문서와 java 객체 간 매핑을 자동화
 
@@ -29,7 +31,8 @@ dependencies {
 
     testImplementation 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.security:spring-security-test'
+    testImplementation 'org.springframework.security:spring-security-test' //3
+    // 3. 스프링 시큐리티를 테스트하기 위한 의존성 추가
 }
 
 test {
